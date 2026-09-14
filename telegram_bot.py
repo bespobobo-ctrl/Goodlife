@@ -13,6 +13,12 @@ import urllib.request
 import urllib.parse
 from typing import Optional, Dict, Any
 
+# Ensure UTF-8 output on Windows consoles
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 BOT_TOKEN = "8825930433:AAHuO34DwB3A8CWTQj__9p32usy7qn-IPME"
 API_BASE = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
@@ -180,7 +186,7 @@ def run_bot(webapp_url: str):
     set_menu_button(webapp_url)
 
     offset = 0
-    print("[+] Bot polling started. Press Ctrl+C to stop.")
+    print("[+] Bot polling started. Listening for updates...")
 
     while True:
         try:
