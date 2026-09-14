@@ -61,7 +61,7 @@ export default function GoodLifeLogo({ size = 42, showText = true, subtitle = "M
             fontFamily: 'var(--font-heading)',
             fontSize: size > 40 ? '1.4rem' : '1.1rem',
             fontWeight: '800',
-            color: '#1d4ed8',
+            color: 'var(--primary-blue)',
             letterSpacing: '0.04em',
             textTransform: 'uppercase'
           }}>
@@ -71,7 +71,7 @@ export default function GoodLifeLogo({ size = 42, showText = true, subtitle = "M
             <span style={{
               fontSize: size > 40 ? '0.7rem' : '0.6rem',
               fontWeight: '700',
-              color: '#334155',
+              color: 'var(--text-secondary)',
               letterSpacing: '0.12em',
               marginTop: '2px',
               textTransform: 'uppercase'

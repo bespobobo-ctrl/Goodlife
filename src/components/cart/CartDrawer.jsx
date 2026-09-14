@@ -373,7 +373,7 @@ export default function CartDrawer() {
                       <img src={item.image || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&q=80'} alt={nameStr} style={{ width: '64px', height: '64px', objectFit: 'contain', background: '#f8fafc', borderRadius: '8px', padding: '4px' }} />
                       
                       <div style={{ flex: 1 }}>
-                        <h4 style={{ fontSize: '0.88rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.2rem' }}>{nameStr}</h4>
+                        <h4 style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-dark)', marginBottom: '0.2rem' }}>{nameStr}</h4>
                         <div style={{ fontWeight: 800, color: 'var(--primary-blue)', fontSize: '0.95rem' }}>{formatPrice(item.price * item.quantity)}</div>
                         
                         {/* Quantity Controller */}
@@ -441,7 +441,7 @@ export default function CartDrawer() {
 
               {/* Customer Name */}
               <div>
-                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
+                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
                   <User size={15} />
                   <span>{lang === 'uz' ? "Ism va Familiyangiz" : "Ваше имя"} *</span>
                 </label>
@@ -457,7 +457,7 @@ export default function CartDrawer() {
 
               {/* Customer Phone */}
               <div>
-                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
+                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
                   <Phone size={15} />
                   <span>{lang === 'uz' ? "Telefon raqamingiz" : "Номер телефона"} *</span>
                 </label>
@@ -473,7 +473,7 @@ export default function CartDrawer() {
 
               {/* Region Selection */}
               <div>
-                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
+                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
                   <Truck size={15} />
                   <span>{lang === 'uz' ? "Yetkazib berish hududi" : "Регион доставки"} *</span>
                 </label>
@@ -574,7 +574,7 @@ export default function CartDrawer() {
 
               {/* Detailed Address Input */}
               <div>
-                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
+                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
                   <MapPin size={15} />
                   <span>{lang === 'uz' ? "Aniq manzil (shahar, tuman, ko'cha, uy, xonadon)" : "Точный адрес"} *</span>
                 </label>
@@ -590,7 +590,7 @@ export default function CartDrawer() {
 
               {/* Payment Method */}
               <div>
-                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.45rem' }}>
+                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.45rem' }}>
                   <CreditCard size={15} />
                   <span>{lang === 'uz' ? "To'lov turi" : "Способ оплаты"} *</span>
                 </label>
@@ -610,7 +610,7 @@ export default function CartDrawer() {
                         borderRadius: '10px',
                         border: paymentMethod === p.id ? '2px solid var(--primary-blue)' : '1px solid #cbd5e1',
                         background: paymentMethod === p.id ? '#eff6ff' : '#fff',
-                        color: paymentMethod === p.id ? 'var(--primary-blue)' : '#334155',
+                        color: paymentMethod === p.id ? 'var(--primary-blue)' : 'var(--text-dark)',
                         fontWeight: 700,
                         fontSize: '0.8rem',
                         cursor: 'pointer',
@@ -625,7 +625,7 @@ export default function CartDrawer() {
 
               {/* Optional Note */}
               <div>
-                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: '#475569', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
+                <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0.35rem' }}>
                   <FileText size={15} />
                   <span>{lang === 'uz' ? "Buyurtma uchun izoh (ixtiyoriy)" : "Примечание (необязательно)"}</span>
                 </label>
@@ -642,7 +642,7 @@ export default function CartDrawer() {
               <div style={{ background: '#f8fafc', borderRadius: '12px', padding: '1rem', border: '1px solid #e2e8f0', marginTop: '0.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: '#64748b', marginBottom: '0.4rem' }}>
                   <span>{lang === 'uz' ? "Mahsulotlar summasi:" : "Сумма товаров:"}</span>
-                  <span style={{ fontWeight: 700, color: '#1e293b' }}>{formatPrice(totalPrice)}</span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-dark)' }}>{formatPrice(totalPrice)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', color: '#64748b', marginBottom: '0.6rem' }}>
                   <span>{lang === 'uz' ? "Yetkazib berish (Dastavka):" : "Доставка:"}</span>
@@ -650,7 +650,7 @@ export default function CartDrawer() {
                     {isFreeDelivery ? (lang === 'uz' ? "Bepul 🎉" : "Бесплатно") : formatPrice(deliveryFee)}
                   </span>
                 </div>
-                <div style={{ borderTop: '1px dashed #cbd5e1', paddingTop: '0.6rem', display: 'flex', justifyContent: 'space-between', fontSize: '1.05rem', fontWeight: 900, color: '#0f172a' }}>
+                <div style={{ borderTop: '1px dashed #cbd5e1', paddingTop: '0.6rem', display: 'flex', justifyContent: 'space-between', fontSize: '1.05rem', fontWeight: 900, color: 'var(--text-dark)' }}>
                   <span>{lang === 'uz' ? "Jami to'lov:" : "Итого к оплате:"}</span>
                   <span style={{ color: 'var(--primary-blue)' }}>{formatPrice(finalTotal)}</span>
                 </div>
@@ -666,7 +666,7 @@ export default function CartDrawer() {
                   padding: '0.85rem 1.25rem',
                   borderRadius: '12px',
                   background: '#f1f5f9',
-                  color: '#475569',
+                  color: 'var(--text-secondary)',
                   border: 'none',
                   fontWeight: 700,
                   cursor: 'pointer',
@@ -709,7 +709,7 @@ export default function CartDrawer() {
               <CheckCircle2 size={40} />
             </div>
 
-            <h3 style={{ fontSize: '1.35rem', fontWeight: 900, color: '#0f172a', marginBottom: '0.5rem' }}>
+            <h3 style={{ fontSize: '1.35rem', fontWeight: 900, color: 'var(--text-dark)', marginBottom: '0.5rem' }}>
               {lang === 'uz' ? "Rahmat! Buyurtmangiz qabul qilindi!" : "Спасибо! Ваш заказ принят!"}
             </h3>
 
@@ -893,7 +893,7 @@ export default function CartDrawer() {
             <div style={{ padding: '1.25rem 1.5rem', background: '#f8fafc', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
                 <span style={{ fontSize: '0.72rem', color: '#64748b', display: 'block' }}>Tanlangan koordinatalar:</span>
-                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0f172a' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--text-dark)' }}>
                   {tempMapCoords.lat.toFixed(5)}, {tempMapCoords.lng.toFixed(5)}
                 </span>
               </div>
@@ -902,7 +902,7 @@ export default function CartDrawer() {
                 <button
                   type="button"
                   onClick={() => setIsMapModalOpen(false)}
-                  style={{ padding: '0.75rem 1.25rem', borderRadius: '12px', border: '1px solid #cbd5e1', background: '#fff', color: '#475569', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer' }}
+                  style={{ padding: '0.75rem 1.25rem', borderRadius: '12px', border: '1px solid #cbd5e1', background: '#fff', color: 'var(--text-secondary)', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer' }}
                 >
                   {lang === 'uz' ? "Bekor qilish" : "Отмена"}
                 </button>

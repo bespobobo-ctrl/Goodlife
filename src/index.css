@@ -787,3 +787,25 @@ footer ul li a:hover {
 [data-theme="midnight"] [style*="border-bottom: 1px solid #e2e8f0"] {
   border-color: var(--border-light) !important;
 }
+
+
+/* High-Contrast Crisp Typography for Dark & Dim Modes */
+[data-theme="dim"] [style*="color: #0f172a"],
+[data-theme="dim"] [style*="color: #1e293b"],
+[data-theme="dim"] [style*="color: #2d251e"],
+[data-theme="dim"] [style*="color: #334155"],
+[data-theme="midnight"] [style*="color: #0f172a"],
+[data-theme="midnight"] [style*="color: #1e293b"],
+[data-theme="midnight"] [style*="color: #2d251e"],
+[data-theme="midnight"] [style*="color: #334155"] {
+  color: #ffffff !important;
+}
+
+[data-theme="dim"] [style*="color: #475569"],
+[data-theme="dim"] [style*="color: #64748b"],
+[data-theme="dim"] [style*="color: #786c5e"],
+[data-theme="midnight"] [style*="color: #475569"],
+[data-theme="midnight"] [style*="color: #64748b"],
+[data-theme="midnight"] [style*="color: #786c5e"] {
+  color: #cbd5e1 !important;
+}

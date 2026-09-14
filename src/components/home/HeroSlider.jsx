@@ -190,7 +190,7 @@ export default function HeroSlider({ onSelectCategory }) {
               }}>
                 {slide.badge}
               </span>
-              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '3px' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: isDark ? '#e2e8f0' : 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '3px' }}>
                 <Zap size={13} color="var(--primary-orange)" />
                 {lang === 'uz' ? "Eng yaxshi kafolat" : "Лучшая цена"}
               </span>
@@ -201,14 +201,14 @@ export default function HeroSlider({ onSelectCategory }) {
               fontWeight: 900,
               lineHeight: 1.1,
               marginBottom: '0.85rem',
-              color: '#0f172a',
+              color: isDark ? '#ffffff' : '#0f172a',
               letterSpacing: '-0.02em'
             }}>
               {slide.title}
             </h1>
 
             <p style={{
-              color: '#475569',
+              color: isDark ? '#e2e8f0' : '#475569',
               fontSize: '0.92rem',
               marginBottom: '1.5rem',
               lineHeight: 1.55,
@@ -244,10 +244,10 @@ export default function HeroSlider({ onSelectCategory }) {
               </button>
 
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.72rem', color: '#94a3b8', textDecoration: 'line-through', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.72rem', color: isDark ? '#cbd5e1' : '#94a3b8', textDecoration: 'line-through', fontWeight: 600 }}>
                   {formatPrice(slide.oldPrice)}
                 </span>
-                <span style={{ fontSize: '1.35rem', fontWeight: 900, color: slide.accentColor }}>
+                <span style={{ fontSize: '1.35rem', fontWeight: 900, color: isDark ? '#38bdf8' : slide.accentColor }}>
                   {formatPrice(slide.price)}
                 </span>
               </div>

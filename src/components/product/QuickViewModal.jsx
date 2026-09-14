@@ -367,7 +367,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>(148 {lang === 'uz' ? 'sharhlar' : 'отзывов'})</span>
               </div>
 
-              <h2 style={{ fontSize: '1.75rem', lineHeight: 1.25, color: '#0f172a', marginBottom: '0.5rem' }}>
+              <h2 style={{ fontSize: '1.75rem', lineHeight: 1.25, color: 'var(--text-dark)', marginBottom: '0.5rem' }}>
                 {nameStr}
               </h2>
 
@@ -750,7 +750,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
                       <h5 style={{
                         fontSize: '0.78rem',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: 'var(--text-dark)',
                         lineHeight: 1.3,
                         margin: 0,
                         height: '2.3rem',
@@ -879,7 +879,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
               )}
 
               {product.fullDesc ? (
-                <div style={{ marginBottom: '1rem', whiteSpace: 'pre-line', color: '#334155' }}>
+                <div style={{ marginBottom: '1rem', whiteSpace: 'pre-line', color: 'var(--text-secondary)' }}>
                   {product.fullDesc}
                 </div>
               ) : (
