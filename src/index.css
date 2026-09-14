@@ -809,3 +809,29 @@ footer ul li a:hover {
 [data-theme="midnight"] [style*="color: #786c5e"] {
   color: #cbd5e1 !important;
 }
+
+/* Telegram Mini App & Mobile Bottom Nav */
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 74px;
+  }
+  .mobile-bottom-nav {
+    display: block !important;
+  }
+}
+
+/* Safe area for newer iPhones / Telegram full-screen */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  @media (max-width: 768px) {
+    body {
+      padding-bottom: calc(74px + env(safe-area-inset-bottom));
+    }
+  }
+}
+

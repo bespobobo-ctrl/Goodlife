@@ -6,9 +6,11 @@ import { ToastProvider } from './context/ToastContext';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 import { CurrencyProvider } from './context/CurrencyContext';
+import { TelegramProvider, useTelegram } from './context/TelegramContext';
 
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import MobileBottomNav from './components/layout/MobileBottomNav';
 import CartDrawer from './components/cart/CartDrawer';
 import WishlistDrawer from './components/cart/WishlistDrawer';
 import CompareModal from './components/product/CompareModal';
@@ -62,6 +64,26 @@ function MainAppContent() {
       window.removeEventListener('popstate', handleHashSync);
     };
   }, []);
+
+  // Telegram Mini App Context
+  const { setBackButton } = useTelegram();
+
+  // Sync Telegram native Back Button
+  React.useEffect(() => {
+    const isModalOpen = Boolean(quickViewProduct || isWishlistOpen || isCompareOpen);
+    const canGoBack = isModalOpen || activePage !== 'home';
+
+    if (canGoBack) {
+      setBackButton(true, () => {
+        if (quickViewProduct) setQuickViewProduct(null);
+        else if (isWishlistOpen) setIsWishlistOpen(false);
+        else if (isCompareOpen) setIsCompareOpen(false);
+        else setActivePage('home');
+      });
+    } else {
+      setBackButton(false);
+    }
+  }, [quickViewProduct, isWishlistOpen, isCompareOpen, activePage, setBackButton]);
 
   const handleSelectCategory = (catId) => {
     setSelectedCategory(catId || 'all');
@@ -162,6 +184,12 @@ function MainAppContent() {
             onClose={() => setQuickViewProduct(null)}
           />
           <Footer setActivePage={setActivePage} />
+          {/* Native Mobile & Telegram Mini App Bottom Navigation */}
+          <MobileBottomNav
+            activePage={activePage}
+            setActivePage={setActivePage}
+            onOpenWishlist={() => setIsWishlistOpen(true)}
+          />
         </>
       )}
     </div>
@@ -171,19 +199,21 @@ function MainAppContent() {
 export default function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider>
-        <LanguageProvider>
-          <CurrencyProvider>
-            <ToastProvider>
-              <CartProvider>
-                <WishlistProvider>
-                  <MainAppContent />
-                </WishlistProvider>
-              </CartProvider>
-            </ToastProvider>
-          </CurrencyProvider>
-        </LanguageProvider>
-      </ThemeProvider>
+      <TelegramProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <CurrencyProvider>
+              <ToastProvider>
+                <CartProvider>
+                  <WishlistProvider>
+                    <MainAppContent />
+                  </WishlistProvider>
+                </CartProvider>
+              </ToastProvider>
+            </CurrencyProvider>
+          </LanguageProvider>
+        </ThemeProvider>
+      </TelegramProvider>
     </ErrorBoundary>
   );
 }

@@ -9,6 +9,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useCurrency } from '../../context/CurrencyContext';
 import { useCart } from '../../context/CartContext';
 import { StorageService } from '../../services/storageService';
+import { useTelegram } from '../../context/TelegramContext';
 
 // Fallback regional center coordinates
 const REGION_COORDS = {
@@ -32,6 +33,7 @@ export default function CartDrawer() {
   const { lang, t } = useLanguage();
   const { formatPrice } = useCurrency();
   const { cart, isCartOpen, closeCart, updateQuantity, removeFromCart, clearCart, totalPrice } = useCart();
+  const { isTMA, user, hapticNotification, hapticImpact, sendData } = useTelegram();
 
   // Checkout Step State: 'cart' | 'checkout' | 'success'
   const [step, setStep] = useState('cart');
@@ -55,6 +57,16 @@ export default function CartDrawer() {
   const [locSuccess, setLocSuccess] = useState('');
   const [isMapModalOpen, setIsMapModalOpen] = useState(false);
   const [tempMapCoords, setTempMapCoords] = useState(null);
+
+  // Auto-fill customer from Telegram profile if available
+  useEffect(() => {
+    if (user && !customerName) {
+      const nameParts = [user.first_name, user.last_name].filter(Boolean);
+      if (nameParts.length > 0) {
+        setCustomerName(nameParts.join(' '));
+      }
+    }
+  }, [user]);
 
   // Auto-fill location if user previously selected in header
   useEffect(() => {
@@ -304,12 +316,19 @@ export default function CartDrawer() {
       date: dateStr,
       status: 'Yangi',
       payment: paymentMethod === 'cash' ? 'Naqd pul' : paymentMethod === 'click' ? 'Click' : paymentMethod === 'payme' ? 'Payme' : 'Uzum Bank',
-      channel: 'Web App'
+      channel: isTMA ? 'Telegram' : 'Web App',
+      telegramUser: user ? (user.username ? `@${user.username}` : [user.first_name, user.last_name].filter(Boolean).join(' ')) : null
     };
 
     // Save to unified storage
     StorageService.addOnlineOrder(newOrder);
     StorageService.decrementStock(cart);
+
+    // Haptic feedback & TMA data send
+    if (isTMA) {
+      hapticNotification('success');
+      sendData(newOrder);
+    }
 
     // Trigger confetti
     try {
