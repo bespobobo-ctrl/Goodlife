@@ -87,7 +87,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
         padding: '0.35rem 0',
         fontSize: '0.78rem'
       }}>
-        <div className="container" style={{
+        <div className="container header-pre-header-container" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -98,7 +98,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', flexShrink: 0 }}>
             <LocationPicker />
             
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
+            <div className="header-phone-box" style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
               <PhoneCall size={13} color="var(--primary-orange)" />
               <span>+998 71 200 00 00</span>
               <span style={{
@@ -120,7 +120,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
             <ThemeControlModal compact={false} />
 
             {/* Currency Switcher USD / UZS */}
-            <div className="lang-switch">
+            <div className="lang-switch header-currency-switch">
               <button
                 className={`lang-btn ${currency === 'USD' ? 'active' : ''}`}
                 onClick={() => setCurrency('USD')}
@@ -138,7 +138,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
             </div>
 
             {/* Language Switcher UZ / RU */}
-            <div className="lang-switch">
+            <div className="lang-switch header-lang-switch">
               <button
                 className={`lang-btn ${lang === 'uz' ? 'active' : ''}`}
                 onClick={() => setLang('uz')}
@@ -157,6 +157,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
 
             {/* Admin Panel Link */}
             <button
+              className="header-admin-btn"
               onClick={() => handleNavClick(activePage === 'admin' ? 'home' : 'admin')}
               style={{
                 background: activePage === 'admin' ? 'var(--primary-orange)' : 'var(--primary-blue-light)',
@@ -182,7 +183,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
 
       {/* 2. MAIN SPACIOUS BRAND & SEARCH HEADER */}
       <div className="top-header" style={{ padding: '0.85rem 0', background: 'var(--header-bg)' }}>
-        <div className="container" style={{
+        <div className="container header-main-container" style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -354,7 +355,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
           </div>
 
           {/* Primary Shopping Actions: Compare, Wishlist, Cart */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexShrink: 0 }}>
+          <div className="header-desktop-actions" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexShrink: 0 }}>
             
             {/* Compare Trigger */}
             <div
@@ -441,7 +442,7 @@ export default function Header({ activePage = 'home', setActivePage, onOpenWishl
       </div>
 
       {/* 3. DESKTOP NAVIGATION MENU BAR */}
-      <div className="nav-bar" style={{ background: 'var(--header-bg)', borderTop: '1px solid var(--border-light)' }}>
+      <div className="nav-bar desktop-nav-bar" style={{ background: 'var(--header-bg)', borderTop: '1px solid var(--border-light)' }}>
         <div className="container nav-container">
           <button className="btn-categories" onClick={() => handleNavClick('shop')}>
             <ChevronDown size={18} />

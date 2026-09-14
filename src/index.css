@@ -818,20 +818,115 @@ footer ul li a:hover {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 74px;
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
   }
+
+  body {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Header Mobile Optimization */
+  .header-pre-header-container {
+    padding: 0 0.5rem !important;
+    justify-content: space-between !important;
+  }
+
+  .header-phone-box,
+  .header-currency-switch,
+  .header-admin-btn {
+    display: none !important;
+  }
+
+  .top-header {
+    padding: 0.5rem 0 !important;
+  }
+
+  .header-main-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+    padding: 0 0.6rem !important;
+  }
+
+  .header-main-container > div:first-child {
+    justify-content: center !important;
+  }
+
+  .header-desktop-actions {
+    display: none !important;
+  }
+
+  .desktop-nav-bar {
+    display: none !important;
+  }
+
+  .search-box-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+
+  .search-box-pill {
+    padding: 0.2rem 0.35rem 0.2rem 0.85rem !important;
+  }
+
+  .search-box-pill input {
+    font-size: 0.85rem !important;
+    padding: 0.45rem 0.5rem !important;
+  }
+
+  .search-btn-gradient {
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* Service strip on mobile */
+  .service-strip {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+    padding: 1rem !important;
+  }
+
+  /* Fixed Native Horizontal App Bottom Navigation Bar */
   .mobile-bottom-nav {
-    display: block !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    height: 62px !important;
+    background: var(--header-bg, #ffffff) !important;
+    border-top: 1px solid var(--border-light) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+    z-index: 9999 !important;
+    padding: 0 0.35rem !important;
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+  }
+
+  .mobile-bottom-nav > button {
+    flex: 1 1 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    padding: 3px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-sizing: border-box !important;
   }
 }
 
-/* Safe area for newer iPhones / Telegram full-screen */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-  @media (max-width: 768px) {
-    body {
-      padding-bottom: calc(74px + env(safe-area-inset-bottom));
-    }
-  }
-}
 
