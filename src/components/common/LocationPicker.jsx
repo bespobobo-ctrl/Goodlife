@@ -327,17 +327,27 @@ const LocationPicker = ({ onLocationChange }) => {
         onClick={() => setIsOpen(true)}
         className="loc-trigger-btn"
         title="Yetkazib berish manzilini tanlash"
+        style={{
+          background: 'var(--bg-card, #f8fafc)',
+          color: 'var(--text-dark, #0f172a)',
+          border: '1.5px solid var(--border-light, #e2e8f0)',
+          borderRadius: '50px',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.55rem',
+          padding: '0.4rem 0.85rem'
+        }}
       >
         <div className="loc-beacon-container">
           <div className="loc-beacon-wave"></div>
           <div className="loc-beacon-dot"></div>
         </div>
-        <MapPin size={16} color="#2563eb" style={{ flexShrink: 0 }} />
+        <MapPin size={16} color="var(--primary-blue, #2563eb)" style={{ flexShrink: 0 }} />
         <div className="loc-trigger-content">
-          <span className="loc-trigger-city">
+          <span className="loc-trigger-city" style={{ color: 'var(--text-dark, #0f172a)' }}>
             {currentLoc.city}
           </span>
-          <span className="loc-trigger-sub">
+          <span className="loc-trigger-sub" style={{ color: 'var(--text-muted, #64748b)' }}>
             {deliveryInfo.time} ({deliveryInfo.cost})
           </span>
         </div>

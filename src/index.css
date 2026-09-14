@@ -627,6 +627,8 @@ footer ul li a:hover {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
+}
+
 /* Base Desktop Grid & Flex Layouts */
 .hero-slider-grid {
   display: grid;
@@ -847,11 +849,9 @@ footer ul li a:hover {
   color: #cbd5e1 !important;
 }
 
-/* Telegram Mini App & Mobile Bottom Nav */
-@media (min-width: 769px) {
-  .mobile-bottom-nav {
-    display: none !important;
-  }
+/* Telegram Mini App & Mobile Bottom Nav (HIDDEN ON DESKTOP BY DEFAULT) */
+.mobile-bottom-nav {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
