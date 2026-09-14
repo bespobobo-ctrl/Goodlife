@@ -208,7 +208,7 @@ export default function MobileBottomNav({ activePage, setActivePage, onOpenWishl
           padding: '4px 0'
         }}
       >
-        {isTMA && user ? (
+        {isTMA && user && user.first_name ? (
           <div style={{
             width: '22px',
             height: '22px',
@@ -221,13 +221,13 @@ export default function MobileBottomNav({ activePage, setActivePage, onOpenWishl
             fontSize: '0.65rem',
             fontWeight: 800
           }}>
-            {user.first_name ? user.first_name[0] : 'U'}
+            {user.first_name[0].toUpperCase()}
           </div>
         ) : (
-          <ShieldCheck size={20} strokeWidth={activePage === 'admin' ? 2.5 : 1.8} />
+          <User size={20} strokeWidth={activePage === 'admin' ? 2.5 : 1.8} />
         )}
         <span style={{ fontSize: '0.68rem', fontWeight: activePage === 'admin' ? 800 : 600 }}>
-          {isTMA && user ? user.first_name.slice(0, 7) : (activePage === 'admin' ? "Do'kon" : "Admin")}
+          {isTMA && user && user.first_name ? user.first_name.slice(0, 8) : (activePage === 'admin' ? "Do'kon" : "Profil")}
         </span>
       </button>
     </nav>

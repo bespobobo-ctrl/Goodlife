@@ -126,26 +126,17 @@ export default function HeroSlider({ onSelectCategory }) {
     <section style={{ padding: '1.25rem 0 1.75rem 0' }}>
       {/* Grid container with exact same height stretch alignment */}
       <div
-        className="container"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '2.1fr 1fr',
-          gap: '1.25rem',
-          alignItems: 'stretch'
-        }}
+        className="container hero-slider-grid"
       >
         {/* Main Left Hero Banner Slider Showcase */}
         <div
+          className="hero-main-slide-card"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           style={{
             background: getSlideGradient(slide),
             border: '1px solid var(--border-blue)',
             borderRadius: '24px',
-            padding: '2.5rem 2.5rem 2rem 2.5rem',
-            display: 'flex',
-            alignItems: 'center',
-            justify: 'space-between',
             position: 'relative',
             overflow: 'hidden',
             boxShadow: '0 15px 35px -5px rgba(37, 99, 235, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset',
@@ -256,6 +247,7 @@ export default function HeroSlider({ onSelectCategory }) {
 
           {/* Slide Product Floating Animated Image */}
           <div
+            className="hero-slide-image-wrapper"
             key={`img-${slideKey}`}
             style={{
               position: 'relative',
@@ -263,7 +255,7 @@ export default function HeroSlider({ onSelectCategory }) {
               height: '320px',
               display: 'flex',
               alignItems: 'center',
-              justify: 'center',
+              justifyContent: 'center',
               zIndex: 2,
               animation: 'heroImageEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
@@ -315,10 +307,10 @@ export default function HeroSlider({ onSelectCategory }) {
         </div>
 
         {/* Right Side 3 Mini Promo Cards - EXACT SAME TOTAL HEIGHT ALIGNMENT */}
-        <div style={{
+        <div className="hero-promo-cards-col" style={{
           display: 'flex',
           flexDirection: 'column',
-          justify: 'space-between',
+          justifyContent: 'space-between',
           gap: '0.85rem',
           height: '100%'
         }}>

@@ -171,7 +171,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
     }} onClick={onClose}>
       
       {/* Main Modal Card Window */}
-      <div style={{
+      <div className="quick-view-modal-content" style={{
         maxWidth: '940px',
         width: '100%',
         maxHeight: '90vh',
@@ -235,7 +235,7 @@ export default function QuickViewModal({ product, isOpen, onClose }) {
         </div>
 
         {/* Main Grid: Left Gallery + Right Specs & Controls */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
+        <div className="quick-view-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
           
           {/* Left Column: Image Gallery Viewer */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>

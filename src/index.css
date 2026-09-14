@@ -833,16 +833,31 @@ footer ul li a:hover {
     max-width: 100% !important;
   }
 
-  /* Header Mobile Optimization */
+  /* Header Top Utility Bar with Currency & Language for Mobile */
   .header-pre-header-container {
-    padding: 0 0.5rem !important;
+    padding: 0.35rem 0.5rem !important;
     justify-content: space-between !important;
+    flex-wrap: nowrap !important;
   }
 
   .header-phone-box,
-  .header-currency-switch,
   .header-admin-btn {
     display: none !important;
+  }
+
+  .header-currency-switch,
+  .header-lang-switch {
+    display: flex !important;
+    padding: 0.15rem 0.3rem !important;
+    gap: 0.15rem !important;
+    border-radius: 50px !important;
+  }
+
+  .header-currency-switch .lang-btn,
+  .header-lang-switch .lang-btn {
+    padding: 0.2rem 0.45rem !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
   }
 
   .top-header {
@@ -886,6 +901,136 @@ footer ul li a:hover {
   .search-btn-gradient {
     padding: 0.45rem 0.85rem !important;
     font-size: 0.78rem !important;
+  }
+
+  /* Hero Slider Mobile Adaptation */
+  .hero-slider-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .hero-main-slide-card {
+    padding: 1.5rem 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-height: auto !important;
+  }
+
+  .hero-main-slide-card h1 {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .hero-main-slide-card p {
+    font-size: 0.85rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .hero-main-slide-card > div:first-of-type {
+    max-width: 100% !important;
+  }
+
+  .hero-main-slide-card > div:first-of-type > div:first-child {
+    justify-content: center !important;
+  }
+
+  .hero-main-slide-card > div:first-of-type > div:last-child {
+    justify-content: center !important;
+  }
+
+  .hero-slide-image-wrapper {
+    width: 220px !important;
+    height: 190px !important;
+    margin: 1rem auto 0 auto !important;
+  }
+
+  .hero-slide-image-wrapper img {
+    max-height: 180px !important;
+  }
+
+  .hero-promo-cards-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Product Layouts & Grids (2-Column Mobile Catalog) */
+  .product-layout-grid-left,
+  .product-layout-grid-right {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .product-items-grid,
+  .deal-products-grid,
+  .shop-products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .deal-promo-banners-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Product Card Compact 2-Column Mobile Styling */
+  .product-card {
+    padding: 0.75rem !important;
+    border-radius: 14px !important;
+  }
+
+  .product-card .product-img {
+    height: 130px !important;
+    object-fit: contain !important;
+  }
+
+  .product-card h3 {
+    font-size: 0.85rem !important;
+    height: 2.3rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .product-card .price-tag {
+    font-size: 0.92rem !important;
+  }
+
+  .product-card .old-price {
+    font-size: 0.75rem !important;
+  }
+
+  .btn-add-cart {
+    padding: 0.45rem !important;
+    font-size: 0.78rem !important;
+    gap: 0.35rem !important;
+    border-radius: 8px !important;
+  }
+
+  /* QuickView Product Details Modal Mobile Optimization */
+  .quick-view-modal-content {
+    width: 95% !important;
+    max-width: 95% !important;
+    max-height: 90vh !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: 18px !important;
+    margin: auto !important;
+  }
+
+  .quick-view-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .quick-view-grid > div:first-child > div:first-child {
+    height: 230px !important;
+    padding: 1rem !important;
+  }
+
+  .quick-view-grid h1 {
+    font-size: 1.25rem !important;
   }
 
   /* Service strip on mobile */

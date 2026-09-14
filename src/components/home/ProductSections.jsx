@@ -50,7 +50,7 @@ export default function ProductSections({ onQuickView, onSelectCategory }) {
         <div>
           <h2 style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>{t.newAccessories}</h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '1.5rem' }}>
+          <div className="product-layout-grid-left" style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '1.5rem' }}>
             {/* Left Promo Card 50% Off */}
             <div style={{
               background: isDark ? 'linear-gradient(135deg, rgba(245,158,11,0.2) 0%, var(--bg-card) 100%)' : 'linear-gradient(135deg, #fff3c4 0%, #fffbeb 100%)',
@@ -93,7 +93,7 @@ export default function ProductSections({ onQuickView, onSelectCategory }) {
             </div>
 
             {/* Right PC Accessories Product Grid (3 Items) */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
+            <div className="product-items-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
               {loading ? (
                 <SkeletonCard count={3} />
               ) : accessories.length === 0 ? (
@@ -113,7 +113,7 @@ export default function ProductSections({ onQuickView, onSelectCategory }) {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
             <h2 style={{ fontSize: '1.8rem' }}>{t.recentlyAdded}</h2>
 
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {[
                 { id: 'all', label: lang === 'uz' ? 'Barchasi' : 'Все' },
                 { id: 'featured', label: t.featured },
@@ -142,10 +142,10 @@ export default function ProductSections({ onQuickView, onSelectCategory }) {
           </div>
 
           {/* Grid with Side Promos */}
-          <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gap: '1.5rem' }}>
+          <div className="product-layout-grid-right" style={{ display: 'grid', gridTemplateColumns: '3fr 1fr', gap: '1.5rem' }}>
             
             {/* Products Grid (6 Items) */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
+            <div className="product-items-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
               {loading ? (
                 <SkeletonCard count={6} />
               ) : recentlyAdded.length === 0 ? (
