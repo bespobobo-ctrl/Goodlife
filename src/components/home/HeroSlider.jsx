@@ -127,6 +127,12 @@ export default function HeroSlider({ onSelectCategory }) {
       {/* Grid container with exact same height stretch alignment */}
       <div
         className="container hero-slider-grid"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '2.1fr 1fr',
+          gap: '1.25rem',
+          alignItems: 'stretch'
+        }}
       >
         {/* Main Left Hero Banner Slider Showcase */}
         <div
@@ -137,6 +143,10 @@ export default function HeroSlider({ onSelectCategory }) {
             background: getSlideGradient(slide),
             border: '1px solid var(--border-blue)',
             borderRadius: '24px',
+            padding: '2.5rem 2.5rem 2rem 2.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
             position: 'relative',
             overflow: 'hidden',
             boxShadow: '0 15px 35px -5px rgba(37, 99, 235, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset',
